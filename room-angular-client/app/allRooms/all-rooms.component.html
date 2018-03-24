@@ -1,0 +1,15 @@
+<h3>Information on All Rooms</h3>
+<div class="col-md-7">
+ Sort By
+  	<div class="btn-group btn-group-sm" style="margin-right: 100px">
+  		<button class="btn btn-default" style="margin-right: 30px; margin-left: 30px" [class.active]="sortBy==='price'" (click)="sortByPrice()">Price</button>
+  		<button class="btn btn-default" style="margin-right: 30px" [class.active]="sortBy==='noOfRooms'" (click)="sortByNoOfRooms()">No. of Beds</button>
+  	</div>
+</div>
+<hr/>
+
+<div class="row">
+	<div class="col-md-5" *ngFor="let room of  roomsObj">
+		<room-display #thumbnail [roomCommunication]="room"></room-display>
+	</div>
+</div>
