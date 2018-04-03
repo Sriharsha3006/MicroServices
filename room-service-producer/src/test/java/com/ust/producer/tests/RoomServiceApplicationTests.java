@@ -1,4 +1,4 @@
-package com.ust;
+package com.ust.producer.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,16 +15,7 @@ import com.ust.producer.repository.RoomRepository;
 @SpringBootTest
 public class RoomServiceApplicationTests {
 	
-	@Autowired
-	private RoomRepository repo;
 	@Test
 	public void contextLoads() {
 	}
-	
-	@Test
-	public void testRepo() {
-		Room room=repo.findByRoomNumber("P1");
-		assertEquals("P1", room.getRoomNumber());
-	}
-
 }
