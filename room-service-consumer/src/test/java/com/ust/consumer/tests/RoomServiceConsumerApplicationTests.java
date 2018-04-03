@@ -1,4 +1,4 @@
-package com.ust.reservation;
+package com.ust.consumer.tests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
