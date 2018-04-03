@@ -57,6 +57,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>room-springcloud-config-server</finalName>
 	</build>
 
 	<repositories>
