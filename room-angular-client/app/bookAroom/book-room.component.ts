@@ -17,7 +17,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 export class BookRoomComponent{
     
     room:IRooms[];
-    url:string = 'http://localhost:8888/Consumer/consumer/roomConsumer?roomNumber='
+    url:string = 'http://192.168.99.100:8888/Consumer/consumer/roomConsumer?roomNumber='
     constructor(private roomService:RoomService,private route:ActivatedRoute, private router:Router) {
        console.log(this.route.snapshot.params['roomNumber'])
         this.url=this.url+this.route.snapshot.params['roomNumber']

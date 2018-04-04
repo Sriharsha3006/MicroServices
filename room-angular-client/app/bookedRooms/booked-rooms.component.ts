@@ -9,7 +9,7 @@ export class BookedRoomsComponent{
     
     bookedRoomsObj:IRooms[]
     sortBy:string='all'
-    url:string = 'http://localhost:8888/Consumer/consumer/roomConsumer'
+    url:string = 'http://192.168.99.100:8888/Consumer/consumer/roomConsumer'
     
     constructor(private roomService:RoomService) {
        console.log(this.bookedRoomsObj);
