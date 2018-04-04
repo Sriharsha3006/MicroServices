@@ -1,7 +1,5 @@
-FROM node:6
-COPY package.json
+FROM node:6.11.0
 RUN npm cache clean
 RUN npm install
-COPY . 
 EXPOSE 8808
 CMD ["npm","start"]
