@@ -41,3 +41,22 @@ zuul:
 
 server:
   port: 8765
+  
+eureka:
+    us-west-2:
+        availabilityZones: us-west-2a, us-west-2b
+    client:
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+
+logging:
+    level:
+      ROOT: INFO
+      org.springframework.web: INFO
+
+app:
+  ConnectTimeout: 10000
+  ReadTimeout: 30000
