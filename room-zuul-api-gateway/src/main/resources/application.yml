@@ -38,3 +38,6 @@ zuul:
             path: /Producer/**
             serviceId: ROOMSERVICEPRODUCER
             stripPrefix: false
+
+server:
+  port: 8765
