@@ -7,37 +7,19 @@ spring:
      name: ROOMZUULAPIGATEWAY
 
 hystrix:
-  threadpool:
-    default:
-      # Maximum number of concurrent requests when using thread pools (Default: 10)
-      coreSize: 100
-      # Maximum LinkedBlockingQueue size - -1 for using SynchronousQueue (Default: -1)
-      maxQueueSize: -1
-      # Queue size rejection threshold (Default: 5)
-      queueSizeRejectionThreshold: 5
   command:
     default:
-      circuitBreaker:
-        sleepWindowInMilliseconds: 30000
-        requestVolumeThreshold: 20
       execution:
         isolation:
-#          strategy: SEMAPHORE, no thread pool but timeout handling stops to work
-          strategy: THREAD
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 60000
 
 zuul:
-    ignoredServices: "*"
     routes:
-        consumerroute:
+        ROOMSERVICECONSUMER:
             path: /Consumer/**
-            serviceId: ROOMSERVICECONSUMER
-            stripPrefix: false
-        producerroute:
+        ROOMSERVICEPRODUCER:
             path: /Producer/**
-            serviceId: ROOMSERVICEPRODUCER
-            stripPrefix: false
 
 server:
   port: 8765
@@ -46,17 +28,10 @@ eureka:
     us-west-2:
         availabilityZones: us-west-2a, us-west-2b
     client:
+        register-with-eureka: true
         fetchRegistry: true
         serviceUrl:
             defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
             us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
             us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
-
-logging:
-    level:
-      ROOT: INFO
-      org.springframework.web: INFO
-
-app:
-  ConnectTimeout: 10000
-  ReadTimeout: 30000
+        
