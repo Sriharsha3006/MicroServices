@@ -31,7 +31,7 @@ eureka:
         register-with-eureka: true
         fetchRegistry: true
         serviceUrl:
-            defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
-            us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
-            us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            defaultZone: http://ec2-34-218-197-156.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2a: http://ec2-34-218-197-156.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2b: http://ec2-34-218-197-156.us-west-2.compute.amazonaws.com/eureka/
         
