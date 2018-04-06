@@ -10,7 +10,7 @@ export class AllRoomsComponent{
         
     roomsObj:IRooms[]
     sortBy:string='all';
-    url:string = 'http://192.168.99.100:8888/Consumer/consumer/roomConsumer'
+    url:string = 'http://room-app-loadbalancer-398262411.us-west-2.elb.amazonaws.com/Consumer/consumer/roomConsumer'
     
     constructor(private roomService:RoomService) {
          this.roomService.getRoomData(this.url).subscribe((response:IRooms[])=>this.roomsObj=response);

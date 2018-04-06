@@ -7,10 +7,19 @@ spring:
      name: ROOMZUULAPIGATEWAY
 
 hystrix:
+  threadpool:
+    default:
+      coreSize: 100
+      maxQueueSize: -1
+      queueSizeRejectionThreshold: 5
   command:
     default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 30000
+        requestVolumeThreshold: 20
       execution:
         isolation:
+          strategy: THREAD
           thread:
             timeoutInMilliseconds: 60000
 

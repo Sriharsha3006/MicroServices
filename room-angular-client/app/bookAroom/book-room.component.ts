@@ -17,7 +17,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 export class BookRoomComponent{
     
     room:IRooms[];
-    url:string = 'http://192.168.99.100:8888/Consumer/consumer/roomConsumer?roomNumber='
+    url:string = 'http://room-app-loadbalancer-398262411.us-west-2.elb.amazonaws.com/Consumer/consumer/roomConsumer?roomNumber='
     constructor(private roomService:RoomService,private route:ActivatedRoute, private router:Router) {
        console.log(this.route.snapshot.params['roomNumber'])
         this.url=this.url+this.route.snapshot.params['roomNumber']
@@ -25,7 +25,7 @@ export class BookRoomComponent{
     }
 
     bookARoom() {
-        let urlForBookRoom='http://localhost:8888/Producer/producer/bookARoom/'+this.room[0].roomNumber
+        let urlForBookRoom='http://room-app-loadbalancer-398262411.us-west-2.elb.amazonaws.com/Producer/producer/bookARoom/'+this.room[0].roomNumber
         this.room[0].availability="Not Available"
         this.roomService.bookARoom(urlForBookRoom,this.room[0]).subscribe((roomjson)=>{
             this.router.navigate(['/congratulations'])
