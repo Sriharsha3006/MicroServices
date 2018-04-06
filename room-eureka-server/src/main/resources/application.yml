@@ -1,0 +1,21 @@
+spring:
+  profiles: cloud
+server:
+    port: 8761
+
+eureka:
+    region: us-west-2
+    shouldUseDns: false
+    datacenter: cloud
+    us-west-2: 
+        availabilityZones: us-west-2a,us-west-2b
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+        enableSelfPreservation: false
