@@ -40,7 +40,7 @@ public class RoomServiceClient {
 	@HystrixCommand(fallbackMethod = "getRoomInfo_FallBack")
 	public List<Room> getRoomInfo(String roomNumber){
 		
-		InstanceInfo instance = client.getNextServerFromEureka("RoomServiceProducer", false);
+		InstanceInfo instance = client.getNextServerFromEureka("ROOMSERVICEPRODUCER", false);
 		ResponseEntity<List<Room>> response = restTemplate.
 				exchange("http://ROOMSERVICEPRODUCER/producer/roomProducer?roomNumber="+roomNumber, 
 																	HttpMethod.GET, null,

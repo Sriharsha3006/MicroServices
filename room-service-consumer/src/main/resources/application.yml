@@ -1,0 +1,26 @@
+spring:
+    profiles: cloud
+    application:
+        name: ROOMSERVICECONSUMER
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8080
+  
+eureka:
+    us-west-2:
+        availabilityZones: us-west-2a
+    datacenter: cloud
+    instance:
+        preferIpAddress: true
+    client:
+        serviceUrl:
+            defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+   
+welcome:
+  message: Hi!! I am Cloud Properties File.........

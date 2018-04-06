@@ -1,0 +1,33 @@
+spring:
+    profiles: cloud
+    application:
+        name: ROOMSERVICEPRODUCER
+    datasource:
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        password: Amazon123
+        url: jdbc:oracle:thin:@room-db.cqkyoqyhtpac.us-west-2.rds.amazonaws.com:1521:ROOMDB
+        username: sriharsha3006
+    jpa:
+      database-platform: org.hibernate.dialect.Oracle10gDialect
+      hibernate:
+        ddl-auto: none
+        show-sql: true
+          
+management:
+  security:
+    enabled: false
+    
+server:
+  port: 9080
+  
+eureka:
+    us-west-2:
+        availabilityZones: us-west-2a
+    datacenter: cloud
+    instance:
+        preferIpAddress: true
+    client:
+        serviceUrl:
+            defaultZone: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2a: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
+            us-west-2b: http://ec2-34-218-221-120.us-west-2.compute.amazonaws.com/eureka/
