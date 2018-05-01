@@ -1,0 +1,9 @@
+spring:
+      application:
+              name:RoomServiceConsumer
+
+      cloud:
+          config:
+              uri: http://localhost:9000
+      profiles:
+            active: default
